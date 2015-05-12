@@ -14,7 +14,7 @@
 Summary:        Ground Control Station
 Name:           OpenPilot
 Version:        15.02.01
-Release:        1
+Release:        2
 License:        GPLv2+
 Group:          Monitoring
 Url:            https://www.openpilot.org/
@@ -182,10 +182,13 @@ created by the OpenPilot Community.
 
 %install
 %make install DESTDIR=%{buildroot} prefix=%{_prefix} libdir=%{_libdir}
+mkdir -p %{buildroot}%{_udevrulesdir}
+install -m0655 package/linux/45-openpilot-permissions.rules %{buildroot}%{_udevrulesdir}/45-openpilot-permissions.rules
 
 %files
 %{_bindir}/openpilotgcs
 %{_bindir}/udp_test
+%{_udevrulesdir}/45-openpilot-permissions.rules
 %{_libdir}/openpilotgcs/plugins/%{name}/*.so
 %{_libdir}/openpilotgcs/plugins/%{name}/*.pluginspec
 %{_datadir}/openpilotgcs/*
