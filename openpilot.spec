@@ -14,7 +14,7 @@
 Summary:        Ground Control Station
 Name:           OpenPilot
 Version:        15.02.01
-Release:        2
+Release:        3
 License:        GPLv2+
 Group:          Monitoring
 Url:            https://www.openpilot.org/
@@ -178,7 +178,7 @@ created by the OpenPilot Community.
 %apply_patches
 
 %build
-%make gcs QMAKE=qmake-qt5 libdir=%{_libdir} CC=%{__cc} CXX=%{__cxx}
+%make gcs QMAKE=qmake-qt5 libdir=%{_libdir} CC=%{__cc} CXX=%{__cxx} GCS_LIBRARY_BASENAME=%{_lib}
 
 %install
 %make install DESTDIR=%{buildroot} prefix=%{_prefix} libdir=%{_libdir}
