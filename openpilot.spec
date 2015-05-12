@@ -32,6 +32,7 @@ BuildRequires:	cmake(Qt5Multimedia)
 BuildRequires:	pkgconfig(libusb-1.0)
 BuildRequires:	pkgconfig(sdl)
 BuildRequires:	qt5-linguist-tools
+Provides:	openpilot = %{EVRD}
 
 %description
 OpenPilot is a next-generation Open Source UAV
