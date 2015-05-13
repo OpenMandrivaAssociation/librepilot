@@ -178,6 +178,7 @@ created by the OpenPilot Community.
 %apply_patches
 # remmove hardcoded path
 sed -i 's!GCS_LIBRARY_BASENAME = lib!GCS_LIBRARY_BASENAME = %{_lib}!g' ground/openpilotgcs/openpilotgcs.pri
+sed -i 's!/lib/openpilotgcs!/%{_lib}/openpilotgcs!g' package/Linux.mk
 
 %build
 %make gcs QMAKE=qmake-qt5 libdir=%{_libdir} CC=%{__cc} CXX=%{__cxx} GCS_LIBRARY_BASENAME=%{_lib}
