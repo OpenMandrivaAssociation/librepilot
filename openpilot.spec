@@ -31,6 +31,7 @@ BuildRequires:	cmake(Qt5SerialPort)
 BuildRequires:	cmake(Qt5Multimedia)
 BuildRequires:	pkgconfig(libusb-1.0)
 BuildRequires:	pkgconfig(sdl)
+BuildRequires:	qmake5
 BuildRequires:	qt5-linguist-tools
 Provides:	openpilot = %{EVRD}
 
