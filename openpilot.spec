@@ -29,6 +29,7 @@ BuildRequires:	cmake(Qt5Quick)
 BuildRequires:	cmake(Qt5Script)
 BuildRequires:	cmake(Qt5SerialPort)
 BuildRequires:	cmake(Qt5Multimedia)
+BuildRequires:	cmake(Qt5Concurrent)
 BuildRequires:	pkgconfig(libusb-1.0)
 BuildRequires:	pkgconfig(sdl)
 BuildRequires:	qmake5
