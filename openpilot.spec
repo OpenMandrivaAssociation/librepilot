@@ -32,6 +32,9 @@ BuildRequires:	cmake(Qt5Multimedia)
 BuildRequires:	cmake(Qt5Concurrent)
 BuildRequires:	pkgconfig(libusb-1.0)
 BuildRequires:	pkgconfig(sdl)
+BuildRequires:	cmake(Qt5OpenGL)
+BuildRequires:	cmake(Qt5PrintSupport)
+BuildRequires:	cmake(Qt5Sql)
 BuildRequires:	qmake5
 BuildRequires:	qt5-linguist-tools
 Provides:	openpilot = %{EVRD}
@@ -183,7 +186,11 @@ sed -i 's!GCS_LIBRARY_BASENAME = lib!GCS_LIBRARY_BASENAME = %{_lib}!g' ground/op
 sed -i 's!/lib/openpilotgcs!/%{_lib}/openpilotgcs!g' package/Linux.mk
 
 %build
-%make gcs QMAKE=qmake-qt5 libdir=%{_libdir} CC=%{__cc} CXX=%{__cxx} GCS_LIBRARY_BASENAME=%{_lib}
+make arm_sdk_install
+%make all_flight QMAKE=qmake-qt5
+%make all_ground QMAKE=qmake-qt5 libdir=%{_libdir} CC=%{__cc} CXX=%{__cxx} GCS_LIBRARY_BASENAME=%{_lib}
+%make uavobjects QMAKE=qmake-qt5 CC=%{__cc} CXX=%{__cxx}
+%make all QMAKE=qmake-qt5 CC=%{__cc} CXX=%{__cxx}
 
 %install
 %make install DESTDIR=%{buildroot} prefix=%{_prefix} libdir=%{_libdir}
