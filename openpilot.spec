@@ -36,6 +36,7 @@ BuildRequires:	cmake(Qt5OpenGL)
 BuildRequires:	cmake(Qt5PrintSupport)
 BuildRequires:	cmake(Qt5Sql)
 BuildRequires:	qmake5
+BuildRequires:	curl
 BuildRequires:	qt5-linguist-tools
 Provides:	openpilot = %{EVRD}
 
