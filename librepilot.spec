@@ -195,10 +195,9 @@ created by the LibrePilot Community.
 # flight/tests/math/unittest.cpp \
 # ground/gcs/src/plugins/hitl/il2simulator.cpp
 
-
 %build
 
-%make config_new                             \
+make config_new                             \
     enable-udev-rules=yes                   \
     libbasename=%{_lib}                     \
     prefix=%{_prefix}                       \
@@ -206,7 +205,7 @@ created by the LibrePilot Community.
     udevrulesdir=%{_udevrulesdir}           \
     WITH_PREBUILT_FW=$(pwd)/firmware
 
-%make opfw_resource gcs
+make %_smp_mflags opfw_resource gcs
 
 %install
 %makeinstall_std
