@@ -214,5 +214,7 @@ make %_smp_mflags opfw_resource gcs
 %{_bindir}/librepilot-gcs
 %{_udevrulesdir}/45-librepilot.rules
 %{_datadir}/applications/librepilot.desktop
-%{_datadir}/librepilot-gcs/*
+%{_libdir}/librepilot-gcs/plugins/%{name}/*.pluginspec
+%{_libdir}/librepilot-gcs/plugins/%{name}/*.so
 %{_datadir}/pixmaps/librepilot.png
+%{_datadir}/librepilot-gcs/
