@@ -183,7 +183,7 @@ created by the LibrePilot Community.
 
 %prep
 %setup -qn %{name} -a 1
-#apply_patches
+#autopatch -p1
 #sed -i -e 's!isnan!std::isnan!g' -e 's!isinf!std::isinf!g' \
 # flight/libraries/math/mathmisc.h \
 # flight/modules/Attitude/attitude.c \
