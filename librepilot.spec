@@ -17,7 +17,7 @@ Version:        15.09
 Release:        1
 License:        GPLv2+
 Group:          Monitoring
-Url:            http://www.librepilot.org/
+Url:            https://www.librepilot.org/
 Source0:	http://download.librepilot.org/source/%{name}-%{version}.tar.gz
 Source1:	http://download.librepilot.org/firmware/%{name}-%{version}_firmware.tar.gz
 BuildRequires:	cmake(Qt5Xml)
